@@ -5,7 +5,7 @@ const query = async function () {
     );
     const data = await response.json();
     console.log(data);
-    const apiTest = data;
+    const apiTest = data.meals;
     document.getElementById("test").innerText = apiTest;
   } catch (error) {
     console.log(error);
