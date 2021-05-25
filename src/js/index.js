@@ -6,7 +6,7 @@ const query = async function () {
       "https://www.themealdb.com/api/json/v1/1/search.php?s="
     );
     const data = await response.json();
-    data.recipes.forEach((recipe) => {
+    data.meals.forEach((recipe) => {
       DOMSelectors.grid.insertAdjacentHTML(
         "beforeend",
         `<div class="recipe-card">
