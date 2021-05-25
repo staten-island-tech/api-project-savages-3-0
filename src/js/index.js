@@ -3,17 +3,16 @@ import { DOMSelectors } from "./DOM";
 const query = async function () {
   try {
     const response = await fetch(
-      "https://www.themealdb.com/api/json/v1/1/filter.php?c=vegan"
+      "https://www.themealdb.com/api/json/v1/1/search.php?s="
     );
     const data = await response.json();
-    data.meals.forEach((recipe) => {
-      console.log(recipe.meals);
+    data.recipes.forEach((recipe) => {
       DOMSelectors.grid.insertAdjacentHTML(
         "beforeend",
         `<div class="recipe-card">
       <div class="recipe-card-front">
         <img
-          src="https://image.tmdb.org/t/p/w300/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg"
+          src="${recipe.strMealThumb}"
           alt=""
           class="thumbnail"
         />
@@ -34,4 +33,4 @@ const query = async function () {
     alert("Hey something went wrong");
   }
 };
-//query();
+query();
