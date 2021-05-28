@@ -11,6 +11,7 @@ const query = async function () {
         "beforeend",
         `<div class="recipe-card">
       <div class="recipe-card-front">
+        <h3 class="recipe-card-header">${recipe.strMeal}</h3>
         <img
           src="${recipe.strMealThumb}"
           alt=""
@@ -18,7 +19,6 @@ const query = async function () {
         />
       </div>
       <div class="recipe-card-back">
-        <h3 class="recipe-card-header">${recipe.strMeal}</h3>
         <div class="recipe-types">
           <li class="recipe-type">Vegan</li>
           <li class="recipe-type">Fantasy</li>
